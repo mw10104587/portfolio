@@ -3,10 +3,9 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/project.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
-	<link rel="stylesheet" type="text/css" href="css/projectlist.css">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome-4.5.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap-social.css">
+
 
 	<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
@@ -15,19 +14,18 @@
 	<script type="text/javascript" src="js/react-dom.js"></script>
 	<script type="text/javascript" src="js/browser.min.js"></script>
 	<script type="text/javascript" src="js/react-with-addons.js"></script>
-	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	
+	<script type="text/javascript">
+		var projectId = window.location.search.substring(1).split("=")[1];
+		
+		function getProjectId(){
+			return projectId;
+		}
 
-	<!-- use react.js, render all the data in this js files -->
-	<script type="text/babel" src="js/projectlist.js"></script>
-	<!-- js file with the language filter function -->
-	<!-- // <script type="text/javascript" src="js/filter.js"></script> -->
-	<!-- set listener for the window scroll -->
-	<!-- // <script type="text/javascript" src="js/index-controlls.js"></script> -->
+	</script>
+	<script type="text/babel" src="js/project.js"></script>
 
-	<title>Chi-An Wang's portfolio</title>
-    <!-- You can use open graph tags to customize link previews.
-    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-    <meta property="og:url"           content="http://www.ca-wang.com" />
+	<meta property="og:url"           content="http://www.ca-wang.com" />
     <meta property="og:type"          content="website" />
     <meta property="og:title"         content="Chi-An Wang's Portfolio" />
     <meta property="og:description"   content="Reporter /Programmer" />
@@ -40,7 +38,7 @@
 		<div class="overlay orange">
 			<div id="header-name-mgtop"></div>
 			<div class="container">
-				<div id="header-name-wrap">Chi-An Wang</div>
+				<div id="project-name-wrap"></div>
 			</div>
 			<div id="social-btns-stickbtm">
 				<div class="container">
@@ -65,31 +63,31 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="container" id="portfolio-intro">
-		I am a <span class="orange-underline">dual degree</span> graduate student studying <span class="orange-underline">computer science and journalism</span> in Columbia University.
-I have a Bachelor’s degree from National Taiwan University in <span class="orange-underline">electrical engineering</span>.
-I did several data journalism stories in the New Media Lab of United Daily News before coming to New York City, and I loved it. I also love taking photos. This is my <a href="Wang_Resume.pdf" target="_blank">resume</a>.
-	</div>
-
 	<div class="container">
-		<h1> Projects </h1>
+
+		<div id="go-to-app-head" class="go-to-app"></div>
+
+		<div id="project-intro" class="prj-block"></div>
+
+		<div id="project-why-now" class="prj-block">
+			
+		</div>
+
+		<div class="project-contribution prj-block">
+			<h1 class="left-orange">My Contribution</h1>
+			<div id="contributions-wrap"></div>
+		</div>
+
+		<div class="project-what-we-done prj-block">
+			<h1 class="left-orange">What We've Done</h1>
+			<div id="we-dones-wrap"></div>
+		</div>
+
+		<div id="go-to-app-tail" class="go-to-app"></div>
+
+
 	</div>
-
-	<div class="container" id="news-prj-wrap">
-
-	</div>
-
-	<div class="container">
-		<h1> Stories </h1>
-	</div>
-
-	<div class="container" id="stories-prj-wrap">
-
-	</div>
-
 
 
 </body>
-
 </html>
