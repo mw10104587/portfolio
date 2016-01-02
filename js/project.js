@@ -84,8 +84,6 @@ var WhyNow = React.createClass({
 
 $(document).ready(function(){
 
-
-
 	// get data from local storage and get the project content 
 	// with projectID from url parameter
 

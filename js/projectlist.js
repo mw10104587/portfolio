@@ -67,9 +67,16 @@ var ProjectCell = React.createClass({
 
 		var project_info = this.props.info;
 		var projectId = project_info["project_id"];
+
+		// 
+		if (projectId.indexOf("prj") == -1 && projectId.indexOf("story") != -1) {
+			// this is story 
+			var redirectWindow = window.open(project_info["project_url"]);
+    		redirectWindow.location;
+			return;	
+		};
 		
-		/*var redirectWindow = window.open('project.html?projectid=' + projectId, '_blank');
-    	redirectWindow.location;*/
+		
     	window.location.assign('project.html?projectid=' + projectId);
 
 	},
@@ -77,8 +84,8 @@ var ProjectCell = React.createClass({
 
 		var project_info = this.props.info;
 		console.log(project_info);
-		var institute = project_info["project_id"].split("_")[2];
-		console.log(institute);
+		// var institute = project_info["project_id"].split("_")[2];
+		// console.log(institute);
 
 		var prj_img_style = {
 			height: 160,
@@ -100,13 +107,18 @@ var ProjectCell = React.createClass({
 			fontFamily: "'Century Gothic', CenturyGothic, AppleGothic, sans-serif"
 		};
 
+		var project_intro = project_info["project_intro"];
+		if (project_intro.length > 180) {
+			project_intro = project_info["project_intro"].slice(0, 180) + "..."
+		};
+
 		return (
 			<div className = "col-md-3">
 				<div className = "prj-frame">
 					<div className = "prj-img-wrap" style={prj_img_style}>
 
 						<div className = "prj-img-over" onClick={this.gotoProject}>
-							{project_info["project_intro"].slice(0, 180) + "..."}
+							{project_intro}
 						</div>
 					</div>
 					<div className="project-name" style={proj_name_wrap_style}>
@@ -138,6 +150,21 @@ d3.csv("../data/portfolio-projects.csv", function(prj_data){
 
 
 });
+
+
+d3.csv("../data/stories.csv", function(story_data){
+
+	console.log(story_data);
+
+	localStorage.setItem("stories-data", JSON.stringify(story_data));
+
+	ReactDOM.render(
+		<ProjectList data={story_data} />,
+		document.getElementById("stories-prj-wrap")
+	);
+
+
+})
 
 
 /*for (var i = 0; i < 9; i++) {
