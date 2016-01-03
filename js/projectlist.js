@@ -68,7 +68,6 @@ var ProjectCell = React.createClass({
 		var project_info = this.props.info;
 		var projectId = project_info["project_id"];
 
-		// 
 		if (projectId.indexOf("prj") == -1 && projectId.indexOf("story") != -1) {
 			// this is story 
 			var redirectWindow = window.open(project_info["project_url"]);
@@ -83,7 +82,7 @@ var ProjectCell = React.createClass({
 	render: function(){
 
 		var project_info = this.props.info;
-		console.log(project_info);
+		// console.log(project_info);
 		// var institute = project_info["project_id"].split("_")[2];
 		// console.log(institute);
 
@@ -138,7 +137,7 @@ var data = [];
 
 d3.csv("../data/portfolio-projects.csv", function(prj_data){
 
-	console.log(prj_data);
+	// console.log(prj_data);
 	// save the data to local storage
 	localStorage.setItem("project_data", JSON.stringify(prj_data));
 
@@ -154,7 +153,7 @@ d3.csv("../data/portfolio-projects.csv", function(prj_data){
 
 d3.csv("../data/stories.csv", function(story_data){
 
-	console.log(story_data);
+	// console.log(story_data);
 
 	localStorage.setItem("stories-data", JSON.stringify(story_data));
 

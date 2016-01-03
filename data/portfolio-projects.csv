@@ -7,13 +7,13 @@ THE “228 MASSACRE”,http://bit.ly/udn-228,"The “228 massacre” was a upris
 ",,prj_228_udn,"Several weeks before the anniversary of the “228 Massacre”, I told my editor that I want to do a story about the incident, and I started to look for data. We settled down with this idea after confirming with the Memorial Foundation of 228 that they could provide us with the reparation data. Our editor, Viola Tsai, lead our project team to a meeting with the foundation, deciding how the story is going to look like and what kind of data format can they provide.
 
 Studying the calendar is always important for doing news. Also, due to the annual fierce debate online about this past incident, we believe readers would be interested in this story. "
-"Bingo! Campaign Cash
-Rolls in with Bingo,
-in Michigan",http://bit.ly/viz-bingo,"In a two day hackathon held by the Stats club in Columbia University and Columbia Journalism School, we dug into the FEC data, and found an interesting donor name called Bingo Player.",,"| Explore data with R
-| Visualize data with d3.js
-| Design and Build the project website
-| Use Photoshop to optimize R output graph
-| Use Python to minimize tigerline zip_code map data",,prj_bingo_cjs,
+"Philanthropic Backscratching
+",http://bit.ly/data2-philanthropy,"This is a project about 20 Cultural Institutions' philanthropy data in New York City. We tried to find out the cross giving, which a board member of museum A donates to museum B, and the board member of museum B donates back. The project is initiated in the class of Mark Hansen's data II in Columbia University.",,"| Process extracted data into usable csv format
+| Refine data with Python and R
+| Generate node graph data with Python and plot with Gephi
+| Visualization with d3.js","| Collected philanthropy data of 20 cultural institutions (donors and board members)
+| Extracted data from pdf
+| Wrote a story for this project",prj_philanthropy_cjs,Course Project
 "FATAL TRAFFIC ACCIDENT IN TAIWAN
 ",http://bit.ly/fatal_traffic,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et dui vulputate, tincidunt magna id, dapibus velit. Cras tellus justo, accumsan non iaculis non, tincidunt eu sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla sapien eros, pharetra eget cursus ut, pulvinar sed massa. Fusce eget felis velit. Donec nibh urna, bibendum ut euismod nec, maximus ut dui. Proin suscipit libero in diam semper interdum quis in lacus. Nulla lacus turpis, cursus et pharetra at, commodo id enim. Integer ultrices, mauris ac dapibus commodo, ligula enim tempor ligula, eget bibendum justo lorem nec est. In commodo libero non tellus euismod, eget pulvinar lorem dictum. Etiam porttitor mi urna, eget maximus urna rutrum eget. Nunc pellentesque faucibus pellentesque. Maecenas rutrum pharetra purus, eu sodales metus pellentesque nec. Vestibulum cursus quam et viverra ornare. Duis malesuada ultrices lacus vel lobortis. Fusce ullamcorper est vitae tincidunt tincidunt.",,"| Built customized interactive chart with d3.js
 | Showed clustered data on a zoomable Leaflet map
@@ -29,6 +29,13 @@ in Michigan",http://bit.ly/viz-bingo,"In a two day hackathon held by the Stats c
 |Criticized the out-of-date geolocation format of the National Police Agency.
 |Raised debate about the safety issues of riding scooters in the Facebook comments plug-in at the bottom of the page.
 |Cooperated with Department of Transportation of Taiwan to promote road safety. Became the first data project to make revenue.",prj_traffic_udn,"The Department Of Transportation in Taiwan publicizes traffic accident data every month, but none of the medias in Taiwan tried to do a data-driven story with that large set of data. Compared to various project abroad, our medias don’t put much strength on data in traffic stories. We believe the main difficulty is the format of data. We wanted to make a story that would give pressure to the National Police Agency to reform the way they take down the traffic accident location."
+"Bingo! Campaign Cash
+Rolls in with Bingo,
+in Michigan",http://bit.ly/viz-bingo,"In a two day hackathon held by the Stats club in Columbia University and Columbia Journalism School, we dug into the FEC data, and found an interesting donor name called Bingo Player.",,"| Explore data with R
+| Visualize data with d3.js
+| Design and Build the project website
+| Use Photoshop to optimize R output graph
+| Use Python to minimize tigerline zip_code map data",,prj_bingo_cjs,
 CITIBIKE IN BEDSTUY AND FUTURE PLANS,http://bit.ly/wang_citibike,A Citibike story developed in the Reporting class in Columbia University. Evaluated the goal of reaching a larger body of riders in Boroughs other than Manhattan.,,"| Reported on Citibike beat, went to two Community Board meetings, and talked to 50+ bike riders
 | Explore Citibike data with Python
 | Visualize bike routes, subway stations and Citibike stations on map
@@ -78,7 +85,7 @@ THE WELLNESS OF EACH COUNTY IN TAIWAN,http://bit.ly/udn_county_index,"Visualized
 |Compared the total box office of the top ten best sellers in 2014.
 |Listed ten movies in 2014 with the least box office
 |Analyze how The Oscars ceremony affected the box office.
-|Analyze movies that opened relatively week but increased rapidly in the second week.",prj_boxioffice_udn,
+|Analyze movies that opened relatively week but increased rapidly in the second week.",prj_boxoffice_udn,
 POLITICIANS AND THEIR FANS PAGES,http://bit.ly/udn_politician,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et dui vulputate, tincidunt magna id, dapibus velit. Cras tellus justo, accumsan non iaculis non, tincidunt eu sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla sapien eros, pharetra eget cursus ut, pulvinar sed massa. Fusce eget felis velit. Donec nibh urna, bibendum ut euismod nec, maximus ut dui. Proin suscipit libero in diam semper interdum quis in lacus. Nulla lacus turpis, cursus et pharetra at, commodo id enim. Integer ultrices, mauris ac dapibus commodo, ligula enim tempor ligula, eget bibendum justo lorem nec est. In commodo libero non tellus euismod, eget pulvinar lorem dictum. Etiam porttitor mi urna, eget maximus urna rutrum eget. Nunc pellentesque faucibus pellentesque. Maecenas rutrum pharetra purus, eu sodales metus pellentesque nec. Vestibulum cursus quam et viverra ornare. Duis malesuada ultrices lacus vel lobortis. Fusce ullamcorper est vitae tincidunt tincidunt.",,"| Used Facebook api to get comments, likes, subscribers and shares counts data of a fans page
 | Wrote a short Python script that traces all the way back to the date of the first post (Since Facebook doesn’t provide the establish data of a fans page)
 | Used Parse database to save data
