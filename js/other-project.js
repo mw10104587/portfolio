@@ -18,6 +18,16 @@ var OtherProjects = React.createClass({
 });
 
 var ProjectRow = React.createClass({
+
+	gotoURL: function(){
+
+		var project_info = this.props.projectInfo;		
+		var redirectWindow = window.open(project_info["project_url"]);
+    	redirectWindow.location;
+		// return;	
+
+	},
+
 	render: function(){
 		// a project dictionary
 		var project_info = this.props.projectInfo;
@@ -27,16 +37,48 @@ var ProjectRow = React.createClass({
 		var trophyClass = (prize!="")? "glyphicon glyphicon-flag flag-icon": "nothing";
 		prize = (prize!="")? prize + " - " + project_event: project_event
 
+
+		var thumbnailStyle = {
+			backgroundImage: 'url(../img/ntuee-cell/' + project_info["project_id"] + ".png" + ')',
+			backgroundSize: "cover",
+			backgroundPosition: "center",
+			backgroundRepeat: "no-repeat",
+			width: "100%",
+			height: 180
+		};
+
+		var rowStyle = {
+			margin: '20px 0px 20px 0px'
+		};
+
+
+
+		var projectIntroStyle = {
+			fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif',
+			fontSize: 16
+		};
+
+		var prjNameAnchorStyle = {
+			textDecoration: "none",
+			color: "black"
+		};
+
 		return (
-			<div className="row">
-				<div className="col-md-3"></div>
+			<div className="row" style={rowStyle}>
+				<div className="col-md-3">
+					<div style={thumbnailStyle} onClick={this.gotoURL} className="ntuee-prj-img"></div>
+				</div>
 				<div className="col-md-9">
-					<div className="project-name"><h4>{project_info["project_name"]}</h4></div>
+					<div className="project-name">
+						<a href={project_info["project_url"]} style={prjNameAnchorStyle}>
+							<h3>{project_info["project_name"]}</h3>
+						</a>
+					</div>
 					<div className="project-award-info">
 						<span className={trophyClass}></span>
 						<span className="project-award-and-event">{prize}</span>
 					</div>
-					<div className="project-info">
+					<div className="project-info" style={projectIntroStyle}>
 						{project_info["project_intro"]}
 					</div>
 				</div>

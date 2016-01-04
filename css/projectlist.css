@@ -35,3 +35,11 @@
 .flag-icon{
 	margin-right: 5px;
 }
+
+.project-name h3{
+	margin-top: 5px;
+}
+
+.ntuee-prj-img:hover{
+	cursor: pointer;
+}
