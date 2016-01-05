@@ -69,3 +69,11 @@
 	border-bottom-width: 2px;
 	border-bottom-style: solid;
 }
+
+
+
+#footer{
+	background-color: #333;
+	margin-top: 60px;
+	margin-bottom: -18px;
+}
