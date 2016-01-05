@@ -111,6 +111,14 @@ var ProjectCell = React.createClass({
 			project_intro = project_info["project_intro"].slice(0, 180) + "..."
 		};
 
+		// is it is a story that I wrote, we turn the introduction string into a DOM element
+		console.log("Hello we're here!!");
+		if (project_info["project_id"].indexOf("story") != -1) {
+			project_intro = <URLIcon />;
+
+			console.log(" hello we're in the right place!! ");
+		}
+
 		return (
 			<div className = "col-md-3">
 				<div className = "prj-frame">
@@ -130,6 +138,40 @@ var ProjectCell = React.createClass({
 	}
 
 });
+
+
+
+var URLIcon = React.createClass({
+
+	render: function(){
+
+		var fullWidthStyle = {
+			width: "100%",
+			height: "100%"
+		};
+
+		var iconWrapStyle = {
+			margin: "auto",
+			display: "table",
+			marginTop: 53
+		};
+
+		var urlIconStyle = {
+			fontSize: 20,
+		};
+		
+		return(
+			<div style={fullWidthStyle}>
+				<div style={iconWrapStyle}>
+					<span className="glyphicon glyphicon-link" style={urlIconStyle}></span>
+				</div>
+			</div>
+
+		);
+		
+	}
+});
+
 
 
 
