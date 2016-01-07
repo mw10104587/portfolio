@@ -69,7 +69,7 @@ var ProjectRow = React.createClass({
 					<div style={thumbnailStyle} onClick={this.gotoURL} className="ntuee-prj-img"></div>
 				</div>
 				<div className="col-md-9">
-					<div className="project-name">
+					<div className="project-name hvr-buzz">
 						<a href={project_info["project_url"]} style={prjNameAnchorStyle}>
 							<h3>{project_info["project_name"]}</h3>
 						</a>
