@@ -8,7 +8,7 @@ THE “228 MASSACRE”,http://bit.ly/udn-228,"The “228 massacre” was a upris
 
 Studying the calendar is always important for doing news. Also, due to the annual fierce debate online about this past incident, we believe readers would be interested in this story. "
 "Philanthropic Backscratching
-",http://bit.ly/data2-philanthropy,"This is a project about 20 Cultural Institutions' philanthropy data in New York City. We tried to find out the cross giving, which a board member of museum A donates to museum B, and the board member of museum B donates back. The project is initiated in the class of Mark Hansen's data II in Columbia University.",,"| Process extracted data into usable csv format
+",https://data2-chord-graph.herokuapp.com/,"This is a project about 20 Cultural Institutions' philanthropy data in New York City. We tried to find out the cross giving, which a board member of museum A donates to museum B, and the board member of museum B donates back. The project is initiated in the class of Mark Hansen's data II in Columbia University.",,"| Process extracted data into usable csv format
 | Refine data with Python and R
 | Generate node graph data with Python and plot with Gephi
 | Visualization with d3.js","| Collected philanthropy data of 20 cultural institutions (donors and board members)
