@@ -1,7 +1,7 @@
 .go-to-app{
 	display: table;
 	margin: auto;
-	margin-bottom: 30px;
+	margin-bottom: 40px;
 	margin-top: 30px;
 }
 
@@ -37,3 +37,14 @@ h1.left-orange{
 	font-weight: 800;
 }
 
+#back-to-homepage{
+	display: table;
+	margin: auto;
+	margin-bottom: 110px;
+	font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+	font-size: 14px;
+}
+
+#back-to-homepage > a{
+	color: #d9534f !important;
+}
