@@ -1,4 +1,8 @@
 
+/******************************************************************************/
+/****************************** REACT COMPONENTS ******************************/
+/******************************************************************************/
+
 
 var ProjectIntro = React.createClass({
 	render: function(){
@@ -82,111 +86,138 @@ var WhyNow = React.createClass({
 
 
 
-$(document).ready(function(){
+/******************************************************************************/
+/********************************* EXECUTION  *********************************/
+/******************************************************************************/
 
-	// get data from local storage and get the project content 
-	// with projectID from url parameter
 
-	var projectDataString = localStorage.getItem("project_data")
-	var projectData = JSON.parse(projectDataString);
+// check if there is local storage first
+if (localStorage.getItem("project_data") == null) {
 
-	// project id
-	var currentBrowsingProjectId = getProjectId();
 
-	// I suppose there won't be not found... = =
-	var projectContent = projectData.filter(function(project){
-		return project["project_id"] == currentBrowsingProjectId;
-	})[0];
+	console.log("local storage is null");
+	// if not, it means that people came directly to this page
+	// so we'll have to load and save it first
+	d3.csv("../data/portfolio-projects.csv", function(prj_data){
 
-	// set project name 
-	$("#project-name-wrap").text(projectContent["project_name"]);
+		// save the data to local storage
+		localStorage.setItem("project_data", JSON.stringify(prj_data));
 
-	// set project cover photo
-	$("#header-bar").css({"backgroundImage": 'url("../img/prj-cover/' + currentBrowsingProjectId + '.jpg")'});
+		// than.... we try to show the page.
+		showProject();
 
-	// remove empty cell
-	var contributions = projectContent["project_contributions"].split("|");
-	contributions = contributions.filter(function(contribution){
-		return contribution != "";
 	});
-	
-	contributions.forEach(function(contribution, index, contributions){
+
+}else{
+	showProject();
+}
+
+
+
+function showProject(){
+
+	$(document).ready(function(){
+
+		// get data from local storage and get the project content 
+		// with projectID from url parameter
+
+		var projectDataString = localStorage.getItem("project_data")
+		var projectData = JSON.parse(projectDataString);
+
+		// project id
+		var currentBrowsingProjectId = getProjectId();
+
+		// I suppose there won't be not found... = =
+		var projectContent = projectData.filter(function(project){
+			return project["project_id"] == currentBrowsingProjectId;
+		})[0];
+
+		// set project name 
+		$("#project-name-wrap").text(projectContent["project_name"]);
+
+		// set project cover photo
+		$("#header-bar").css({"backgroundImage": 'url("../img/prj-cover/' + currentBrowsingProjectId + '.jpg")'});
+
+		// remove empty cell
+		var contributions = projectContent["project_contributions"].split("|");
+		contributions = contributions.filter(function(contribution){
+			return contribution != "";
+		});
 		
-		contribution = contribution.trim();
-		contributions[index] = contribution.replace(/\n|\r/g, "");
+		contributions.forEach(function(contribution, index, contributions){
+			
+			contribution = contribution.trim();
+			contributions[index] = contribution.replace(/\n|\r/g, "");
 
-	});
-
-
-	var ourContributions = projectContent["we_done"].split("|");
-	ourContributions = ourContributions.filter(function(contribution){
-		return contribution != "";
-	});
-
-	ourContributions.forEach(function(contribution, index, ourContributions){
-
-		contribution = contribution.trim();
-		ourContributions[index] = contribution.replace(/\n|\r/g, "");
-
-	});
-
-	// console.log(contributions);
-	console.log(ourContributions)
-
-	var projectURL = projectContent["project_url"];
-	console.log(projectURL);
+		});
 
 
-	// react
-	
-	ReactDOM.render(
-		<ProjectIntro intro={projectContent["project_intro"]} />,
-		document.getElementById("project-intro")
-	);
+		var ourContributions = projectContent["we_done"].split("|");
+		ourContributions = ourContributions.filter(function(contribution){
+			return contribution != "";
+		});
 
-	// if no data in why now, we skip the rendering and remove the div
-	if (projectContent["why_now"] == "") {
-		$("#project-why-now").remove();
-	}
-	// else we render react
-	else{
+		ourContributions.forEach(function(contribution, index, ourContributions){
+
+			contribution = contribution.trim();
+			ourContributions[index] = contribution.replace(/\n|\r/g, "");
+
+		});
+
+		var projectURL = projectContent["project_url"];
+
+
+		// react
+		
 		ReactDOM.render(
-			<WhyNow whynow={projectContent["why_now"]} />,
-			document.getElementById("project-why-now")
+			<ProjectIntro intro={projectContent["project_intro"]} />,
+			document.getElementById("project-intro")
 		);
-	}
 
-	// contributions
-	ReactDOM.render(
-		<ProjectContributions contributions={contributions}/>, 
-		document.getElementById("contributions-wrap")
-	);
+		// if no data in why now, we skip the rendering and remove the div
+		if (projectContent["why_now"] == "") {
+			$("#project-why-now").remove();
+		}
+		// else we render react
+		else{
+			ReactDOM.render(
+				<WhyNow whynow={projectContent["why_now"]} />,
+				document.getElementById("project-why-now")
+			);
+		}
 
-	// What we've done
-	if (projectContent["we_done"] == "") {
-		$(".project-what-we-done").remove();
-	}
-	// else we render react
-	else{
+		// contributions
 		ReactDOM.render(
-			<WhatWeveDone ourContributions={ourContributions} />,
-			document.getElementById("we-dones-wrap")
+			<ProjectContributions contributions={contributions}/>, 
+			document.getElementById("contributions-wrap")
 		);
-	}
+
+		// What we've done
+		if (projectContent["we_done"] == "") {
+			$(".project-what-we-done").remove();
+		}
+		// else we render react
+		else{
+			ReactDOM.render(
+				<WhatWeveDone ourContributions={ourContributions} />,
+				document.getElementById("we-dones-wrap")
+			);
+		}
 
 
 
-	// add two go to app buttons
-	ReactDOM.render(
-		<GoToAppButton url={projectContent["project_url"]} />,
-		document.getElementById("go-to-app-head")
-	);
+		// add two go to app buttons
+		ReactDOM.render(
+			<GoToAppButton url={projectContent["project_url"]} />,
+			document.getElementById("go-to-app-head")
+		);
 
-	/*ReactDOM.render(
-		<GoToAppButton url={projectContent["project_url"]} />,
-		document.getElementById("go-to-app-tail")
-	);*/
+		/*ReactDOM.render(
+			<GoToAppButton url={projectContent["project_url"]} />,
+			document.getElementById("go-to-app-tail")
+		);*/
 
+	});
 
+}
 
-})
