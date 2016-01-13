@@ -109,7 +109,9 @@ if (localStorage.getItem("project_data") == null) {
 	});
 
 }else{
+
 	showProject();
+
 }
 
 
@@ -175,11 +177,12 @@ function showProject(){
 		);
 
 		// if no data in why now, we skip the rendering and remove the div
-		if (projectContent["why_now"] == "") {
+		if ( (!("why_now" in projectContent)) || projectContent["why_now"] == "" ) {
 			$("#project-why-now").remove();
 		}
 		// else we render react
 		else{
+
 			ReactDOM.render(
 				<WhyNow whynow={projectContent["why_now"]} />,
 				document.getElementById("project-why-now")
