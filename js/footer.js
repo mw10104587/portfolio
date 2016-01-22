@@ -1,3 +1,40 @@
+var FooterLink = React.createClass({
+
+	getInitialState: function(){
+		return {hover: false};
+	},
+	toggleHover: function(){
+		this.setState({hover: !this.state.hover});
+	},
+	render: function(){
+
+		var footerLinkStyle = {
+			color: "white",
+			textDecoration: "none"
+		};
+
+		var footerLinkHover = {
+			color: "white",
+			textDecoration:"underline"
+		};
+
+		var inlineStyle = {
+			display: "inline-block"
+		};
+
+		var footerStyle = (this.state.hover)?footerLinkHover: footerLinkStyle;
+
+		return(	<div style={inlineStyle} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
+					<a href={this.props.url} style={footerStyle} target={this.props.target}>
+						<span>{this.props.text}</span>
+					</a>
+				</div>);
+
+	}
+
+})
+
+
 var Footer = React.createClass({
 
 	render: function(){
@@ -44,6 +81,8 @@ var Footer = React.createClass({
 			marginBottom: 6
 		};
 
+		
+
 		return(
 
 		<div className="container">
@@ -53,16 +92,16 @@ var Footer = React.createClass({
 				
 				<div style={contactRowStyle}>
 					<div style={iconWrapStyle}><img src="../img/footer-icon/email.png" style={footerIconStyle}/></div>
-					<span>mw10104587@gmail.com</span>
+					<FooterLink url="mailto:mw10104587@gmail.com" text="mw10104587@gmail.com" target="_top"/>
 				</div>
 				
 				<div style={contactRowStyle}>
 					<div style={iconWrapStyle}><img src="../img/footer-icon/twitter.png" style={footerIconStyle} /></div>
-					<span>@WangChiAn</span>
+					<FooterLink url="https://twitter.com/WangChiAn" text="@WangChiAn" target="_blank"/>
 				</div>
 				<div style={contactRowStyle}>
 					<div style={iconWrapStyle}><img src="../img/footer-icon/facebook.png" style={footerIconStyle} /></div>
-					<span>mw10104587</span>
+					<FooterLink url="https://www.facebook.com/mw10104587" text="mw10104587" target="_blank"/>
 				</div>
 
 				<div style={copyrightStyle}>© 2015 | Chi-An Wang</div>
