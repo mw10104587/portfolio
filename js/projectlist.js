@@ -112,7 +112,7 @@ var ProjectCell = React.createClass({
 		};
 
 		// is it is a story that I wrote, we turn the introduction string into a DOM element
-		console.log("Hello we're here!!");
+		// console.log("Hello we're here!!");
 		if (project_info["project_id"].indexOf("story") != -1) {
 			project_intro = <URLIcon />;
 

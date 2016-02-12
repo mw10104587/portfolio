@@ -1,14 +1,19 @@
 project_name,project_url,project_intro,project_tools,project_contributions,we_done,project_id,why_now
-THE “228 MASSACRE”,http://bit.ly/udn-228,"The “228 massacre” was a uprise that happened in 1947, when KMT fled to Taiwan from China, “the mother country.” Original residents in Taiwan were disappointed of the mother country, and consequently, there were lots of conflicts between the citizens and the police. On the night of February 27th, a 40-year-old widow was hit by an official of the Tobacco Monopoly Bureau. The crowds surrounded the officials, and one of the agents fired a gun into the crowd and accidentally killed a bystander. We visualized the reparation data provided by the The Memorial Foundation of 228, and tried to tell this story by mapping data back to history events.",,"| Worked as project manager and engineer in this project
-| Design and implement the visual atmosphere and graphics
-| Wrote the story by looking into the reparation data
-| Built mobile version
-| Reached 100,000 visitors traffic, and high Facebook engagement rate
-",,prj_228_udn,"Several weeks before the anniversary of the “228 Massacre”, I told my editor that I want to do a story about the incident, and I started to look for data. We settled down with this idea after confirming with the Memorial Foundation of 228 that they could provide us with the reparation data. Our editor, Viola Tsai, lead our project team to a meeting with the foundation, deciding how the story is going to look like and what kind of data format can they provide.
+POLITICIANS AND THEIR FANS PAGES,http://bit.ly/udn_politician,Social Media started to become an important tool for politicians to spread their ideas and engage the crowd. We used Facebook api to collect fans page data of 126 politicians in Taiwan and analyzed it.,,"| Used Facebook api to get comments, likes, subscribers and shares counts data of a fans page
+| Wrote a short Python script that traces all the way back to the date of the first post (Since Facebook doesn’t provide the establish data of a fans page)
+| Used Parse database to save data
+| Designed how the website load large amount of text from Facebook Api, instead of saving the data, we load it in an asynchronous manner 
+| Draw scatter plot and bar charts equipped with filter, sort and search functions with d3.js library
+| Minimized profile pictures of politicians to optimize loading speed
+| Implemented the number addition animation when the section is scrolled into view
+","|Showed a scatter plot that users can play with the index on x and y-axis. X-axis includes date of fans page establishment,  party, age, gender and position. Y-axis includes numbers of fans, engagement rate, avg. likes, avg. shares and avg. comments and number of posts on the fans page.
+|Showed a ranking table that users can also sort politicians with the indices listed in bullet point one.
+|Provided deeper insight for politicians with top-ten fans count with a red and blue bar chart. Our reporter also interviewed how their campaign team ran the fans page.
+|Embedded the most-liked post of each top-ten politician.",prj_politicianfb_udn,"We hoped that we can build a tool that observes how each politicians post and how Facebook users engage with them. We believed that the tool will be useful every once in a while when a new election comes.
 
-Studying the calendar is always important for doing news. Also, due to the annual fierce debate online about this past incident, we believe readers would be interested in this story. "
+"
 "Philanthropic Backscratching
-",https://data2-chord-graph.herokuapp.com/,"This is a project about 20 Cultural Institutions' philanthropy data in New York City. We tried to find out the cross giving, which a board member of museum A donates to museum B, and the board member of museum B donates back. The project is initiated in the class of Mark Hansen's data II in Columbia University.",,"| Process extracted data into usable csv format
+",http://bit.ly/philanthropy-NY,"This is a project about 20 Cultural Institutions' philanthropy data in New York City. We tried to find out the cross giving, which a board member of museum A donates to museum B, and the board member of museum B donates back. The project is initiated in the class of Mark Hansen's data II in Columbia University.",,"| Process extracted data into usable csv format
 | Refine data with Python and R
 | Generate node graph data with Python and plot with Gephi
 | Visualization with d3.js","| Collected philanthropy data of 20 cultural institutions (donors and board members)
@@ -86,19 +91,14 @@ THE WELLNESS OF EACH COUNTY IN TAIWAN,http://bit.ly/udn_county_index,"Visualized
 |Listed ten movies in 2014 with the least box office
 |Analyze how The Oscars ceremony affected the box office.
 |Analyze movies that opened relatively week but increased rapidly in the second week.",prj_boxoffice_udn,
-POLITICIANS AND THEIR FANS PAGES,http://bit.ly/udn_politician,Social Media started to become an important tool for politicians to spread their ideas and engage the crowd. We used Facebook api to collect fans page data of 126 politicians in Taiwan and analyzed it.,,"| Used Facebook api to get comments, likes, subscribers and shares counts data of a fans page
-| Wrote a short Python script that traces all the way back to the date of the first post (Since Facebook doesn’t provide the establish data of a fans page)
-| Used Parse database to save data
-| Designed how the website load large amount of text from Facebook Api, instead of saving the data, we load it in an asynchronous manner 
-| Draw scatter plot and bar charts equipped with filter, sort and search functions with d3.js library
-| Minimized profile pictures of politicians to optimize loading speed
-| Implemented the number addition animation when the section is scrolled into view
-","|Showed a scatter plot that users can play with the index on x and y-axis. X-axis includes date of fans page establishment,  party, age, gender and position. Y-axis includes numbers of fans, engagement rate, avg. likes, avg. shares and avg. comments and number of posts on the fans page.
-|Showed a ranking table that users can also sort politicians with the indices listed in bullet point one.
-|Provided deeper insight for politicians with top-ten fans count with a red and blue bar chart. Our reporter also interviewed how their campaign team ran the fans page.
-|Embedded the most-liked post of each top-ten politician.",prj_politicianfb_udn,"We hoped that we can build a tool that observes how each politicians post and how Facebook users engage with them. We believed that the tool will be useful every once in a while when a new election comes.
+THE “228 MASSACRE”,http://bit.ly/udn-228,"The “228 massacre” was a uprise that happened in 1947, when KMT fled to Taiwan from China, “the mother country.” Original residents in Taiwan were disappointed of the mother country, and consequently, there were lots of conflicts between the citizens and the police. On the night of February 27th, a 40-year-old widow was hit by an official of the Tobacco Monopoly Bureau. The crowds surrounded the officials, and one of the agents fired a gun into the crowd and accidentally killed a bystander. We visualized the reparation data provided by the The Memorial Foundation of 228, and tried to tell this story by mapping data back to history events.",,"| Worked as project manager and engineer in this project
+| Design and implement the visual atmosphere and graphics
+| Wrote the story by looking into the reparation data
+| Built mobile version
+| Reached 100,000 visitors traffic, and high Facebook engagement rate
+",,prj_228_udn,"Several weeks before the anniversary of the “228 Massacre”, I told my editor that I want to do a story about the incident, and I started to look for data. We settled down with this idea after confirming with the Memorial Foundation of 228 that they could provide us with the reparation data. Our editor, Viola Tsai, lead our project team to a meeting with the foundation, deciding how the story is going to look like and what kind of data format can they provide.
 
-"
+Studying the calendar is always important for doing news. Also, due to the annual fierce debate online about this past incident, we believe readers would be interested in this story. "
 "THE DISTRIBUTION OF FOREIGN SPOUSE IN TAIWAN
 ",http://bit.ly/ntu_dj,Tech support for a team in the course new data visualization in National Taiwan University.,,"| Built the interactive user interface with buttons and layout
 | Modified Highcharts.js to achieve scroll and update effect (last chart in the project)

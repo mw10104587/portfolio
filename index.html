@@ -5,8 +5,11 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/header.css">
 	<link rel="stylesheet" type="text/css" href="css/projectlist.css">
+	<link rel="stylesheet" type="text/css" href="css/other-project.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome-4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-social.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
 
 	<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
@@ -15,9 +18,16 @@
 	<script type="text/javascript" src="js/react-dom.js"></script>
 	<script type="text/javascript" src="js/browser.min.js"></script>
 	<script type="text/javascript" src="js/react-with-addons.js"></script>
-	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+	<!--script type="text/javascript" src="js/ScrollMagic/Tweenmax.min.js"></script>
+	<script type="text/javascript" src="js/ScrollMagic/ScrollMagic.js"></script>
+	<script type="text/javascript" src="js/ScrollMagic/animation.gsap.js"></script-->
+	<script type="text/javascript" src="js/jquery.stellar.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 
 	<!-- use react.js, render all the data in this js files -->
+	
+
 	<script type="text/babel" src="js/footer.js"></script>
 	<script type="text/babel" src="js/projectlist.js"></script>
 	<script type="text/babel" src="js/other-project.js"></script>
@@ -39,30 +49,34 @@
 
 </head>
 <body>
-	<div class="fluid-container" id="header-bar">
-		<div class="overlay orange">
-			<div id="header-name-mgtop"></div>
-			<div class="container">
-				<div id="header-name-wrap">Chi-An Wang</div>
-			</div>
-			<div id="social-btns-stickbtm">
-				<div class="container">
-					<div id="social-btns">
-						  <a class="btn btn-social-icon btn-twitter" href="https://twitter.com/WangChiAn">
-						    <span class="fa fa-twitter"></span>
-						  </a>
-						  <a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/mw10104587">
-						    <span class="fa fa-facebook"></span>
-						  </a>
-						  <a class="btn btn-social-icon btn-github" href="https://github.com/mw10104587">
-						    <span class="fa fa-github"></span>
-						  </a>
-						  <a class="btn btn-social-icon btn-tumblr" href="http://mileswang.tumblr.com">
-						    <span class="fa fa-tumblr"></span>
-						  </a>
-						  <a class="btn btn-social-icon btn-instagram" href="https://instagram.com/mw10104587">
-						    <span class="fa fa-instagram"></span>
-						  </a>
+	<div class="fluid-container" id="parallex-head">
+		<div id="parallex-1">
+			<div id="header-bar" data-stellar-background-ratio="0.5">
+				<div class="overlay orange">
+					<div id="header-name-mgtop"></div>
+					<div class="container">
+						<div id="header-name-wrap">Chi-An Wang</div>
+					</div>
+					<div id="social-btns-stickbtm">
+						<div class="container">
+							<div id="social-btns">
+								  <a class="btn btn-social-icon btn-twitter" href="https://twitter.com/WangChiAn">
+								    <span class="fa fa-twitter"></span>
+								  </a>
+								  <a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/mw10104587">
+								    <span class="fa fa-facebook"></span>
+								  </a>
+								  <a class="btn btn-social-icon btn-github" href="https://github.com/mw10104587">
+								    <span class="fa fa-github"></span>
+								  </a>
+								  <a class="btn btn-social-icon btn-tumblr" href="http://mileswang.tumblr.com">
+								    <span class="fa fa-tumblr"></span>
+								  </a>
+								  <a class="btn btn-social-icon btn-instagram" href="https://instagram.com/mw10104587">
+								    <span class="fa fa-instagram"></span>
+								  </a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -78,7 +92,7 @@ I did several data journalism stories in the New Media Lab of United Daily News 
 	</div>
 
 	<div class="container">
-		<h1> News Projects </h1>
+		<h1> Data Visualization Projects </h1>
 	</div>
 	<div class="container" id="news-prj-wrap">
 	</div>
@@ -92,7 +106,7 @@ I did several data journalism stories in the New Media Lab of United Daily News 
 	<div class="container">
 		<h1> Selected Projects </h1>
 	</div>
-	<div class="container" id="ntuee-prj-wrap">
+	<div class="container effects" id="ntuee-prj-wrap">
 
 	</div>
 
@@ -109,6 +123,8 @@ I did several data journalism stories in the New Media Lab of United Daily News 
 	</div>
 
 	<div class="fluid-container" id="footer"></div>
+
+
 
 </body>
 

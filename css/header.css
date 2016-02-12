@@ -6,7 +6,7 @@
 
 #header-bar{
 	/*height: 400px;*/
-	height: 27.7vw;
+	height: 30.7vw;
 	background: url("../img/home-cover-bw.jpg");
 	background-size: cover;
 }
@@ -57,7 +57,7 @@
 
 #portfolio-intro{
 	margin-top: 30px;
-	margin-bottom: 150px;
+	margin-bottom: 120px;
     text-align: justify;
     font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
     font-size: 18px;

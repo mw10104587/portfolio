@@ -19,6 +19,15 @@ var OtherProjects = React.createClass({
 
 var ProjectRow = React.createClass({
 
+	getInitialState: function(){
+		return {hover: false};
+	},
+	toggleHover: function(){
+
+		this.setState({hover: !this.state.hover});
+		console.log("toggle function called");
+
+	},
 	gotoURL: function(){
 
 		var project_info = this.props.projectInfo;		
@@ -37,7 +46,6 @@ var ProjectRow = React.createClass({
 		var trophyClass = (prize!="")? "glyphicon glyphicon-flag flag-icon": "nothing";
 		prize = (prize!="")? prize + " - " + project_event: project_event
 
-
 		var thumbnailStyle = {
 			backgroundImage: 'url(../img/ntuee-cell/' + project_info["project_id"] + ".png" + ')',
 			backgroundSize: "cover",
@@ -51,8 +59,6 @@ var ProjectRow = React.createClass({
 			margin: '20px 0px 30px 0px'
 		};
 
-
-
 		var projectIntroStyle = {
 			fontFamily: 'Futura, "Trebuchet MS", Arial, sans-serif',
 			fontSize: 16
@@ -63,10 +69,35 @@ var ProjectRow = React.createClass({
 			color: "black"
 		};
 
+		var imageURL = '../img/ntuee-cell/' + project_info["project_id"] + ".png";
+
+		var imgClass = 'img';
+		if (this.state.hover == true) {
+			imgClass = 'img img-hover';
+		};
+
+		var prjImgClass = "prj-img";
+		if(this.state.hover == true){
+			prjImgClass = "prj-img hover";
+		}
+
+		var prjImgStyle = {
+			height: 190,
+			overflow: "hidden"
+		};
+
+		
 		return (
 			<div className="row" style={rowStyle}>
 				<div className="col-md-3">
-					<div style={thumbnailStyle} onClick={this.gotoURL} className="ntuee-prj-img"></div>
+					<div className={prjImgClass} style={prjImgStyle}>
+						<img src="img/transparent.png" style={thumbnailStyle} className={imgClass}/>
+						<div className="prj-img-overlay" onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover} onClick={this.gotoURL}>
+							<a className="expand">GO</a>
+							<a className="close-overlay hidden"></a>
+						</div>
+					</div>
+					
 				</div>
 				<div className="col-md-9">
 					<div className="project-name hvr-buzz">
